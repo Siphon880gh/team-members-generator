@@ -4,4 +4,5 @@ test("Create Manager object", () => {
     const manager = new Manager();
 
     expect(manager).toEqual(expect.any(Manager));
+    expect(manager.getRole()).toBe("Manager");
 });

@@ -4,4 +4,5 @@ test("Create Engineer object", () => {
     const engineer = new Engineer();
 
     expect(engineer).toEqual(expect.any(Engineer));
+    expect(engineer.getRole()).toBe("Engineer");
 });
