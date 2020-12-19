@@ -8,4 +8,6 @@ Run ```node index.js``` and answer question prompts.
 
 Screenshots
 ===
-Coming soon!
+![Generator for adding team members](README/generator.png)
+
+![Generated team members webpage](README/generated.png)
