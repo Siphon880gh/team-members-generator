@@ -33,50 +33,46 @@ function askMainMenu() {
                 "Build Team Webpage ->"
             ]
         }])
-        .then(answers => {
+        .then(function(answers) {
+
+            /**
+             * 
+             * @callback
+             * After user finishes the questions for an employee role, push the team member into global object for rendering HTML
+             * Then show the main menu again
+             * 
+             */
+            let cb_afterAskingQuestions = function() {
+                container.teamMembers.push(this.getTeamMemberObject());
+                askMainMenu();
+            }
+
             switch (answers.role) {
+
                 case "Manager":
 
-                    // Ask questions
-                    const managerInfo = new Manager();
-                    managerInfo.askQuestions();
-
-                    // Add team member
-                    var newTeamMember = managerInfo.getTeamMemberObject();
-                    container.teamMembers.push(newTeamMember);
-
-                    // askMainMenu(); // Recursive
+                    // Ask questions, then add to team members, and show main menu again
+                    let managerInfo = new Manager();
+                    managerInfo.askQuestions(cb_afterAskingQuestions.bind(managerInfo));
 
                     break;
                 case "Engineer":
 
-                    // Ask questions
-                    const engineerInfo = new Engineer();
-                    engineerInfo.askQuestions();
-
-                    // Add team member
-                    var newTeamMember = engineerInfo.getTeamMemberObject();
-                    container.teamMembers.push(newTeamMember);
-
-                    // askMainMenu(); // Recursive
+                    // Ask questions, then add to team members, and show main menu again
+                    let engineerInfo = new Engineer();
+                    engineerInfo.askQuestions(cb_afterAskingQuestions.bind(engineerInfo));
 
                     break;
                 case "Intern":
 
-                    // Ask questions
-                    const internInfo = new Intern();
-                    internInfo.askQuestions();
-
-                    // Add team member
-                    var newTeamMember = internInfo.getTeamMemberObject();
-                    container.teamMembers.push(newTeamMember);
-
-                    // askMainMenu(); // Recursive
+                    // Ask questions, then add to team members, and show main menu again
+                    let internInfo = new Intern();
+                    internInfo.askQuestions(cb_afterAskingQuestions.bind(internInfo));
 
                     break;
                 default:
                     buildTeamPage();
-                    return; // Ends Recursive
+                    return;
             }
         })
         .catch(error => {
