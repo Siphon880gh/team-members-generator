@@ -8,6 +8,8 @@ Run ```node index.js``` and answer question prompts.
 
 Screenshots
 ===
+Generator tool:
 ![Generator for adding team members](README/generator.png)
 
+Example of what gets generated:
 ![Generated team members webpage](README/generated.png)
