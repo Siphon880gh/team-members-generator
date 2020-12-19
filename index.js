@@ -83,4 +83,8 @@ function askMainMenu() {
 function buildTeamPage() {
     console.log("Outputted to load/data.json\nOpen load/ in web browser to see your team members.");
     console.log(container);
+
+    const filepath = "load/data.json";
+    const text = JSON.stringify(container);
+    fs.writeFileSync(filepath, text);
 }
