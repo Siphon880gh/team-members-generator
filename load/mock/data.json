@@ -1,0 +1,29 @@
+{
+    "teamMembers": [
+
+        {
+            "personName": "Mark Zuckerberg",
+            "role": "Manager",
+            "employeeId": 1,
+            "email": "zuckerberg@test.com",
+            "info": 3
+        },
+
+        {
+            "personName": "Weng",
+            "role": "Engineer",
+            "employeeId": 2,
+            "email": "weng@test.com",
+            "info": "Siphon880gh"
+        },
+
+        {
+            "personName": "Foobar",
+            "role": "Intern",
+            "employeeId": 3,
+            "email": "foobar@test.com",
+            "info": "University of Coding"
+        }
+
+    ]
+}
